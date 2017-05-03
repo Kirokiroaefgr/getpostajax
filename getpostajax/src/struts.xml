@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.devMode " value="true" />
+
+	<package name="stest" extends="struts-default" namespace="/">
+
+		<action name="timeAction" class="action.ServerTimeAction">
+			<result name="success">time.jsp</result>
+		</action>
+
+		<action name="aaa" class="action.ServerTimeAction" method="aaab">
+			<result name="aaab">ooo_ooo.jsp</result>
+		</action>
+
+	</package>
+
+
+
+	<package name="example" extends="json-default" namespace="/">
+		<result-types>
+			<result-type name="json" class="org.apache.struts2.json.JSONResult" />
+		</result-types>
+
+		<action name="updateTimeAction" class="action.ServerTimeAction">
+			<result type="json" name="success">
+			</result>
+		</action>
+
+				<action name="AaaN" class="action.Aaa">
+			<result type="json" name="success">time2.jsp
+			</result>
+		</action>
+
+	</package>
+
+</struts>
